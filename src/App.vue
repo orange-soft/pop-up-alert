@@ -1,21 +1,46 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <PopUpAlert :type="alertType" :message="alertMessage" v-model:is-showing="showPopup"/>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <header>
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125"/>
+
+    <div class="wrapper progress-bar">
+      <HelloWorld msg="You did it!"/>
     </div>
   </header>
 
   <main>
-    <TheWelcome />
+    <TheWelcome/>
   </main>
 </template>
+
+<script setup>
+import PopUpAlert from '@/components/PopUpAlert.vue';
+import {onMounted, ref, watch} from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+import TheWelcome from './components/TheWelcome.vue';
+
+const showPopup = ref(false);
+const alertType = ref('success');
+const alertMessage = ref('Hello World!');
+
+// watch(showPopup, (value) => {
+//   console.log('showPopup', value);
+//   if (value === false) {
+//     setTimeout(() => {
+//       showPopup.value = true;
+//     }, 3000);
+//   }
+// });
+
+onMounted(() => {
+  setTimeout(() => {
+    alertType.value = 'warning';
+    alertMessage.value = 'This is a warning message!';
+    showPopup.value = true;
+  }, 3000);
+});
+</script>
 
 <style scoped>
 header {

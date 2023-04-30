@@ -1,0 +1,27 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 4
+indent_style = space
+insert_final_newline = true
+max_line_length = 100
+tab_width = 4
+
+[*.{html,js,vue,yml,yaml}]
+indent_size = 2
+tab_width = 2
+
+[{*.ats,*.cts,*.mts,*.ts}]
+indent_size = 2
+max_line_length = 80
+tab_width = 2
+
+[{*.cjs,*.js}]
+indent_size = 2
+max_line_length = 80
+tab_width = 2
+
+[{*.har,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.prettierrc,.stylelintrc,bowerrc,composer.lock,jest.config}]
+indent_size = 2
