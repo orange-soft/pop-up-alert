@@ -5,7 +5,7 @@
   <div v-show="isShowing" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40">
     <Transition name="pop-up-transition">
       <div v-if="isShowing"
-        class="w-[95vw] md:w-[400px] min-h-[300px] bg-white rounded-lg shadow-lg p-4 relative">
+        class="w-[95vw] md:w-[400px] min-h-[300px] bg-white text-black rounded-lg shadow-lg p-4 relative">
 
         <div class="absolute right-4 top-4">
           <div class="text-center cursor-pointer z-40 active:scale-90" @click.prevent="closeModal">
